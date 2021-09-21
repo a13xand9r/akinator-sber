@@ -1,0 +1,3 @@
+[submodule "src/server/akinator-server-sber"]
+	path = src/server/akinator-server-sber
+	url = https://github.com/a13xand9r/akinator-server-sber.git
