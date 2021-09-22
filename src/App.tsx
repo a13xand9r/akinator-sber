@@ -24,6 +24,7 @@ const AppContainer = styled.div`
   margin: 2rem auto;
   /* position: relative; */
   @media (max-width: 750px) {
+    margin-top: 1rem;
     min-width: 0;
     width: 100%;
     max-width: 100%;
