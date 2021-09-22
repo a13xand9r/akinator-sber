@@ -31,6 +31,9 @@ const AppContainer = styled.div`
 `
 const ContentContainer = styled.div`
   width: 25rem;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 `
 
 function App() {
