@@ -1,0 +1,17 @@
+.loader-enter {
+  opacity: 0.2;
+  transform: scale(0.3);
+}
+.loader-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 200ms ease-in;
+}
+.loader-exit {
+  opacity: 1;
+}
+.loader-exit-active {
+  opacity: 0.2;
+  transform: scale(0.3);
+  transition: 200ms ease-in;
+}

@@ -6,3 +6,9 @@ type InferActionType<T> = T extends { [key: string]: (...args: any[]) => infer U
 export type ActionsType = InferActionType<typeof actions>
 
 export type CharacterType = 'sber' | 'joy' | 'eva'
+
+export type WinType = {
+  name: string
+  description: string
+  picture: string
+}

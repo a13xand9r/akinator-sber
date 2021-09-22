@@ -20,6 +20,7 @@ export const initAssistant = (
   assistant.on('data', ({ smart_app_data, type, character }: any) => {
     if (smart_app_data) {
       dispatch(smart_app_data)
+      dispatch(actions.setFetching(false))
     }
     if (type === 'character') dispatch(actions.setCharacter(character.id))
   })
