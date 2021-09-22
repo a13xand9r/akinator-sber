@@ -3,8 +3,11 @@ import { Body1, Button } from '@sberdevices/plasma-ui'
 import styled from 'styled-components'
 
 const AnswerButton = styled(Button)`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
+  /* min-height: 3.2rem; */
   margin: 0.5rem auto;
 `
 const ButtonsContainer = styled.div`

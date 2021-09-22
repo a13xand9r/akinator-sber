@@ -11,6 +11,9 @@ import { useEffect, useRef } from 'react'
 
 const StyledImg = styled.img`
   height: 20rem;
+  @media (max-width: 750px) {
+    height: 10rem;
+  }
 `
 
 export const AkinatorImage: React.FC<Props> = ({currentStep, progress, isWin, isGameGoing}) => {
