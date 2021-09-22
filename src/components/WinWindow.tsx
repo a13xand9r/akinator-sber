@@ -21,7 +21,7 @@ const YesNoContainer = styled.div`
   width: 70%;
   justify-content: space-around;
   @media (max-width: 750px) {
-    width: 90%;
+    width: 95%;
   }
 `
 
@@ -29,7 +29,7 @@ const StyledButton = styled(Button)`
   display: block;
   width: 7rem;
   @media (max-width: 750px) {
-    width: 5.5rem;
+    width: 5.2rem;
   }
 `
 
@@ -59,6 +59,7 @@ export const WinWindow: React.FC<Props> = ({onFinishGame, onWrong, picture, disp
         <StyledButton
           view='accent'
           onClick={onYesClick}
+          size='m'
         >
           Да
         </StyledButton>
@@ -66,6 +67,7 @@ export const WinWindow: React.FC<Props> = ({onFinishGame, onWrong, picture, disp
         <StyledButton
           view='warning'
           onClick={onNoClick}
+          size='m'
         >
           Нет
         </StyledButton>
