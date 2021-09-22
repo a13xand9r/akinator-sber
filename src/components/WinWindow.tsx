@@ -9,6 +9,10 @@ const WinImg = styled.img`
   display: block;
   margin: 1rem auto;
   height: 15rem;
+  @media (max-width: 750px) {
+    height: auto;
+    width: 98%;
+  }
 `
 
 const YesNoContainer = styled.div`
@@ -16,11 +20,17 @@ const YesNoContainer = styled.div`
   margin: 1rem auto;
   width: 70%;
   justify-content: space-around;
+  @media (max-width: 750px) {
+    width: 90%;
+  }
 `
 
 const StyledButton = styled(Button)`
   display: block;
   width: 7rem;
+  @media (max-width: 750px) {
+    width: 5.5rem;
+  }
 `
 
 export const WinWindow: React.FC<Props> = ({onFinishGame, onWrong, picture, dispatch}) => {
