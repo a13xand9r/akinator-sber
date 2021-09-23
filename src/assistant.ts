@@ -14,9 +14,9 @@ export const initializeAssistant = (getState: () => any) => {
 }
 
 export const initAssistant = (
-  dispatch: Dispatch<any>,
-  assistant: ReturnType<typeof createAssistant>,
+  dispatch: Dispatch<any>
   ) => {
+  const assistant = initializeAssistant(() => { })
   assistant.on('data', ({ smart_app_data, type, character }: any) => {
     if (smart_app_data) {
       dispatch(smart_app_data)
@@ -24,4 +24,5 @@ export const initAssistant = (
     }
     if (type === 'character') dispatch(actions.setCharacter(character.id))
   })
+  return assistant
 }

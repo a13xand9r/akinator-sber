@@ -4,7 +4,7 @@ import './styles/transition.css';
 import { GlobalStyles } from './components/GlobalStyle';
 import { Container } from '@sberdevices/plasma-ui';
 import { AppHeader } from './components/AppHeader';
-import { initializeAssistant, initAssistant } from './assistant';
+import { initAssistant } from './assistant';
 import { createAssistant } from '@sberdevices/assistant-client';
 import { actions, initialState, reducer } from './reducer';
 import { AkinatorImage } from './components/AkinatorImage';
@@ -22,7 +22,6 @@ const AppContainer = styled.div`
   max-width: ${CONTAINER_WIDTH}rem;
   display: flex;
   margin: 2rem auto;
-  /* position: relative; */
   @media (max-width: 750px) {
     margin-top: 1rem;
     min-width: 0;
@@ -42,8 +41,7 @@ function App() {
 
   const assistantRef = useRef<ReturnType<typeof createAssistant>>()
   useEffect(() => {
-    assistantRef.current = initializeAssistant(() => { })
-    initAssistant(dispatch, assistantRef.current as ReturnType<typeof createAssistant>)
+    assistantRef.current = initAssistant(dispatch)
   }, [])
 
   const onStartGame = () => {

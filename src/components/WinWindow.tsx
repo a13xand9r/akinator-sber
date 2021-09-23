@@ -3,7 +3,6 @@ import { Dispatch, useState } from 'react'
 import styled from 'styled-components'
 import { actions } from '../reducer'
 import { ActionsType } from '../types'
-import { PlayButton } from './PlayButton'
 
 const WinImg = styled.img`
   display: block;

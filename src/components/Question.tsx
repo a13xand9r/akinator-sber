@@ -1,6 +1,5 @@
 import { Card, CardBody, CardContent, TextBox } from '@sberdevices/plasma-ui'
 import styled from 'styled-components'
-import { WinType } from '../types'
 
 const StyledCard = styled(Card)`
   min-height: 4rem;
