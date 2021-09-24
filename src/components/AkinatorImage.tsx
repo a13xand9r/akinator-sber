@@ -29,7 +29,7 @@ export const AkinatorImage: React.FC<Props> = ({currentStep, progress, isWin, is
       return startImage
     } else {
       if (isWin) return winImage
-      if (progressDifference > 10 && currentStep > 15) return angryImage
+      if (progressDifference > 8 && currentStep > 15) return angryImage
       if (progress <= 50 && currentStep > 20) return halfAngryImage
       if (progress <= 25) return thinkImage1
       if (progress <= 50) return thinkImage2

@@ -41,8 +41,8 @@ const ContentContainer = styled.div`
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [aki, setAki] = useState<Akinator | null>(null)
-  const [wrongPersonId, setWrongPersonId] = useState<null | string>(null)
+  // const [aki, setAki] = useState<Akinator | null>(null)
+  // const [wrongPersonId, setWrongPersonId] = useState<null | string>(null)
 
   const assistantRef = useRef<ReturnType<typeof createAssistant>>()
   useEffect(() => {
@@ -50,25 +50,25 @@ function App() {
   }, [])
 
   const onStartGame = async () => {
-    // dispatch(actions.setFetching(true))
-    setAki(await runAkinator())
-    if (aki) {
-      dispatch(actions.setNewQuestion(
-        aki.question as string,
-        aki.answers as string[],
-        aki.currentStep,
-        aki.progress
-      ))
-      dispatch(actions.startGame())
-    }
-    // assistantRef.current?.sendAction({ type: 'START_GAME', payload: {} })
+    dispatch(actions.setFetching(true))
+    // setAki(await runAkinator())
+    // if (aki) {
+    //   dispatch(actions.setNewQuestion(
+    //     aki.question as string,
+    //     aki.answers as string[],
+    //     aki.currentStep,
+    //     aki.progress
+    //   ))
+    //   dispatch(actions.startGame())
+    // }
+    assistantRef.current?.sendAction({ type: 'START_GAME', payload: {} })
   }
   const onAnswerClick = async (index: number) => {
-    // dispatch(actions.setFetching(true))
-    if (aki){
-      nextStep(dispatch, aki, index as AnswerType, wrongPersonId)
-    }
-    // assistantRef.current?.sendAction({ type: 'USER_ANSWER', payload: { answer: index } })
+    dispatch(actions.setFetching(true))
+    // if (aki){
+    //   nextStep(dispatch, aki, index as AnswerType, wrongPersonId)
+    // }
+    assistantRef.current?.sendAction({ type: 'USER_ANSWER', payload: { answer: index } })
   }
   const onBackClick = () => {
     dispatch(actions.setFetching(true))
