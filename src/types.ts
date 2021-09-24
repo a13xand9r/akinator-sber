@@ -12,3 +12,5 @@ export type WinType = {
   description: string
   picture: string
 }
+
+export type AnswerType = 0 | 1 | 2 | 3 | 4

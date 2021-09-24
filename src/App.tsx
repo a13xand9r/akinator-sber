@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
 import './styles/App.css';
 import './styles/transition.css';
 import { GlobalStyles } from './components/GlobalStyle';
@@ -16,6 +16,9 @@ import { CSSTransition } from 'react-transition-group';
 import { Loader } from './components/Loader';
 import { WinWindow } from './components/WinWindow';
 import { PlayButton } from './components/PlayButton';
+import Akinator from 'aki-api/typings/src/Akinator';
+import { checkWin, nextStep, runAkinator } from './akinator';
+import { AnswerType } from './types';
 
 const AppContainer = styled.div`
   min-width: 40rem;
@@ -38,18 +41,33 @@ const ContentContainer = styled.div`
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [aki, setAki] = useState<Akinator | null>(null)
+  const [wrongPersonId, setWrongPersonId] = useState<null | string>(null)
 
   const assistantRef = useRef<ReturnType<typeof createAssistant>>()
   useEffect(() => {
     assistantRef.current = initAssistant(dispatch)
   }, [])
 
-  const onStartGame = () => {
+  const onStartGame = async () => {
     dispatch(actions.setFetching(true))
+    // setAki(await runAkinator())
+    // if (aki) {
+    //   dispatch(actions.setNewQuestion(
+    //     aki.question as string,
+    //     aki.answers as string[],
+    //     aki.currentStep,
+    //     aki.progress
+    //   ))
+    //   dispatch(actions.startGame())
+    // }
     assistantRef.current?.sendAction({ type: 'START_GAME', payload: {} })
   }
-  const onAnswerClick = (index: number) => {
+  const onAnswerClick = async (index: number) => {
     dispatch(actions.setFetching(true))
+    // if (aki){
+    //   nextStep(dispatch, aki, index as AnswerType, wrongPersonId)
+    // }
     assistantRef.current?.sendAction({ type: 'USER_ANSWER', payload: { answer: index } })
   }
   const onBackClick = () => {
