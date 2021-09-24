@@ -3,7 +3,7 @@ import { StateType, ActionsType, CharacterType, WinType } from './types';
 export const initialState = {
   character: 'sber' as CharacterType,
   isGameGoing: false as boolean,
-  question: 'Привет, я Акинатор' as string,
+  question: 'Hey! I\'m a Genie Akinator. I can guess any character you think of and will help you learn English. Let\'s play and learn English together.' as string,
   answers: ['Yes', 'No', 'Don\'t know', 'Probably', 'Probably not'] as string[],
   isFetching: false as boolean,
   currentStep: 0 as number,
