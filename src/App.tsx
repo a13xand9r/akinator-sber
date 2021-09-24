@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
 import './styles/App.css';
 import './styles/transition.css';
 import { GlobalStyles } from './components/GlobalStyle';
@@ -16,9 +16,6 @@ import { CSSTransition } from 'react-transition-group';
 import { Loader } from './components/Loader';
 import { WinWindow } from './components/WinWindow';
 import { PlayButton } from './components/PlayButton';
-import Akinator from 'aki-api/typings/src/Akinator';
-import { checkWin, nextStep, runAkinator } from './akinator';
-import { AnswerType } from './types';
 
 const AppContainer = styled.div`
   min-width: 40rem;
@@ -83,7 +80,7 @@ function App() {
     dispatch(actions.finishGame())
     dispatch(actions.setStep(0))
     dispatch(actions.setWin(null))
-    dispatch(actions.setQuestion('Сыграем еще разок?'))
+    dispatch(actions.setQuestion('One more time?'))
     assistantRef.current?.sendAction({ type: 'FINISH_GAME', payload: {isWin} })
   }
 
@@ -118,7 +115,7 @@ function App() {
                   view='accent'
                   onClick={onStartGame}
                 >
-                  Играть
+                  Play
                 </PlayButton>
               ) :
               <WinWindow

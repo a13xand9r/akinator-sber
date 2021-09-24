@@ -42,7 +42,7 @@ export const AnswerButtons: React.FC<Props> = ({ answers, onAnswerClick, onBackC
         >
           <BackButtonContent>
             <IconArrowLeft />
-            Назад
+            Back
           </BackButtonContent>
         </AnswerButton>
       }

@@ -4,7 +4,7 @@ export const initialState = {
   character: 'sber' as CharacterType,
   isGameGoing: false as boolean,
   question: 'Привет, я Акинатор' as string,
-  answers: ['Да', 'Нет', 'Не знаю', 'Возможно, частично', 'Скорее нет, не совсем'] as string[],
+  answers: ['Yes', 'No', 'Don\'t know', 'Probably', 'Probably not'] as string[],
   isFetching: false as boolean,
   currentStep: 0 as number,
   progress: 0 as number,
