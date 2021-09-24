@@ -22,7 +22,7 @@ export const reducer = (state: StateType, action: ActionsType): StateType => {
     case 'SET_FETCHING':
       return {...state, isFetching: action.flag}
     case 'WIN_PERSON':
-      const questionText = action.win ? `Кажется это ${action.win.name} (${action.win.description})` : state.question
+      const questionText = action.win ? `I think this is ${action.win.name} (${action.win.description})` : state.question
       return {...state, win: action.win, question: questionText}
     case 'SET_QUESTION':
       return {...state, question: action.text}
